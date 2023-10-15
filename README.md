@@ -1,6 +1,6 @@
 # Password Generator
 
-![Password Generator Screenshot](screenshot.png)
+![Password Generator Screenshot](ss.png)
 
 ## Overview
 
@@ -16,7 +16,7 @@ The Password Generator is a web application that allows you to create strong, ra
 
 ## Usage
 
-1. Visit the live application: [Password Generator](https://your-app-url.com)
+1. Visit the live application: [Password Generator](https://wonderful-sprite-eec841.netlify.app/)
 2. Adjust the settings as needed:
    - Slide the "Password length" slider.
    - Select the checkboxes for the character types you want to include.
@@ -30,12 +30,5 @@ The Password Generator is a web application that allows you to create strong, ra
 - CSS (with some tailwind CSS classes)
 - JavaScript
 
-## How to Run Locally
-
-To run this project locally, follow these steps:
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your-username/password-generator.git
+/
 # Password-generator
