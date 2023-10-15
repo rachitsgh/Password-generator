@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password generator</title>
+    <link rel="stylesheet" href="main.css" class="rel">
+    <link rel="stylesheet" href="style.css" class="rel">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper flex justify-center items-center h-[100vh]">
+
+        <div class="contaner flex-col w-[80%] max-w-[450px]">
+            <h1 class="text-[var(--pl-white)] uppercase text-center leading-[1.2] tracking-[2px] opacity-75 text-lg text-[20px]">Password Generator</h1>
+            <div class="display-container bg-[var(--dk-violet)] relative my-[1rem] mx-[0rem] pt-[0.35rem] flex justify-between">
+                <input readonly placeholder="password" class="display" data-passwordDisplay>
+                <button data-copy>
+                    <span class="tooltip" data-copyMsg></span>
+                    <i class="fa-sharp fa-light fa-copy" style="color: #34563c;"></i>
+                </button>
+            </div>
+            <div class="input-container bg-[var(--dk-violet)] w-[100%] p-[2rem] rounded-2xl">
+                <div class="length-container flex justify-between items-center">
+                    <p>Password length</p>
+                    <p data-lengthNumber>0</p>
+                </div>
+                <!-- slider -->
+                <input type="range" min="1" max="20" class="slider" step="1" data-lengthSlider>
+                <!-- check box -->
+                <div class="flex justify-start gap-2 fg text-white items-center my-[0.5rem] text-[1.25rem]"> 
+                    <label class="container1">
+                        <input type="checkbox" id="uppercase">
+                        <svg viewBox="0 0 64 64" height="1em" width="1em">
+                          <path d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16" pathLength="575.0541381835938" class="path"></path>
+                        </svg>
+                      </label>
+                    <label for="uppercase">Includes uppercase letter</label>
+                </div>
+                <div class="flex justify-start gap-2 fg text-white items-center my-[0.5rem] text-[1.25rem]">
+                    <label class="container1">
+                        <input type="checkbox" id="lowercase">
+                        <svg viewBox="0 0 64 64" height="1em" width="1em">
+                          <path d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16" pathLength="575.0541381835938" class="path"></path>
+                        </svg>
+                      </label>
+                    <label for="lowercase">Includes lowercase letter</label>
+                </div>
+                <div class="flex justify-start gap-2 fg text-white items-center my-[0.5rem] text-[1.25rem]">
+                    <label class="container1">
+                        <input type="checkbox" id="numbers">
+                        <svg viewBox="0 0 64 64" height="1em" width="1em">
+                          <path d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16" pathLength="575.0541381835938" class="path"></path>
+                        </svg>
+                      </label>
+                    <label for="numbers">Includes number</label>
+                </div>
+                <div class="flex justify-start gap-2 fg text-white items-center my-[0.5rem] text-[1.25rem]">
+                    <label class="container1">
+                        <input type="checkbox" id="symbols">
+                        <svg viewBox="0 0 64 64" height="1em" width="1em">
+                          <path d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16" pathLength="575.0541381835938" class="path"></path>
+                        </svg>
+                      </label>
+                    <label for="symbols">Includes symbol</label>
+                </div>
+                <!-- Strength section -->
+                <div class="strength-container">
+                    <p>strength</p>
+                    <div data-indicator class="indicator"></div>
+                </div>
+                <!-- generate password -->
+            <button class="generateButton">Generate password</button>
+            </div>
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/8113bcbf78.js" crossorigin="anonymous"></script> 
+</body>
+</html>
